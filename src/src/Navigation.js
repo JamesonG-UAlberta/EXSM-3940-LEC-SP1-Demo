@@ -1,24 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import { NavLink } from 'react-router-dom';
 
 function Navigation() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Navigation
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <nav>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/about">About</NavLink>
+      <NavLink to="/display">Display</NavLink>
+    </nav>
+    
   );
 }
 
