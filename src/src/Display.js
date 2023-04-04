@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import { useLocation } from 'react-router-dom';
-import { useMemo } from 'react';
+import { useLocation, Navigate } from 'react-router-dom';
 
 function Display() {
-  const name = new URLSearchParams(useLocation().search).get("name")
+  const location = useLocation();
+  const name = new URLSearchParams(location.search).get("name")
+
+  if (name === null) {
+    return <Navigate to={"/about?date="+new Date().toLocaleDateString()} state={{ from: location }} replace/>;
+  }
   return (
     <div className="App">
       <header className="App-header">

@@ -7,7 +7,8 @@ function Navigation() {
     <nav>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
-      <NavLink to="/display">Display</NavLink>
+      <NavLink to="/display?name=Joe">Display Joe</NavLink>
+      <NavLink to="/display?name=James">Display James</NavLink>
     </nav>
     
   );
