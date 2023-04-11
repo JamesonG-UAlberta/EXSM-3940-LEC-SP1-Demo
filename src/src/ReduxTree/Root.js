@@ -1,22 +1,17 @@
 import One from "./One";
 import Two from "./Two";
 import Three from "./Three";
-import {useState, createContext} from "react";
+import store from "../ReduxStore/store";
+import { Provider } from "react-redux";
 
-export const DrilledValueContext = createContext(0);
 function Root() {
-  const [drilledValue, setDrilledValue] = useState(0);
-
   return (
     <>
-      <DrilledValueContext.Provider value={{
-        mutator: setDrilledValue,
-        value: drilledValue
-      }}>
+      <Provider store={store}>
           <One />
           <Two />
           <Three />
-      </DrilledValueContext.Provider>
+      </Provider>
     </>
   );
 }

@@ -1,12 +1,7 @@
-import { useContext } from "react";
-import { DrilledValueContext } from "./Root";
-
 function Nine() {
-  const drilledState = useContext(DrilledValueContext);
-
   return (
     <>
-        <input type="text" value={drilledState.value} onChange={(event) => {drilledState.mutator(event.target.value)}}></input>
+        <p>Nine</p>
     </>
   );
 }

@@ -1,12 +1,13 @@
-import { useContext } from "react";
-import { DrilledValueContext } from "./Root";
+import { useSelector, useDispatch } from "react-redux"; 
+import { modify } from "../ReduxStore/Slices/drilledSlice";
 
 function Eight() {
-  const drilledState = useContext(DrilledValueContext);
+  const drilledState = useSelector((state) => state.drilled.value);
+  const dispatch = useDispatch();
 
   return (
     <>
-        <input type="text" value={drilledState.value} onChange={(event) => {drilledState.mutator(event.target.value)}}></input>
+        <input type="text" value={drilledState} onChange={(event) => {dispatch(modify(event.target.value))}}></input>
     </>
   );
 }

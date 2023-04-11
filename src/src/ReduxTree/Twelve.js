@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { DrilledValueContext } from "./Root";
+import { useSelector } from "react-redux"; 
 
-function Twelve(props) {
-  const drilledState = useContext(DrilledValueContext);
+function Twelve() {
+  const drilledState = useSelector((state) => state.drilled.value);
 
   return (
     <>
-        <p>{drilledState.value}</p>
+        <p>{drilledState}</p>
     </>
   );
 }
