@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 export const drilledSlice = createSlice({
     name: 'drilled',
     initialState: {
-        value: 0
+        value: 0,
     },
     reducers: {
         increment: (state) => {
